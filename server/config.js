@@ -1,0 +1,5 @@
+// server configuration file
+module.exports = {
+     database: 'mongodb://localhost:27017/mean-app',
+     secret: 'secret'
+}
