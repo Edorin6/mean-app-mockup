@@ -1,7 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const config = require('../config')
-const Post = require('../models/post')
+const Posts = require('../controllers/Posts')
 
 // initialize server router
 const router = express.Router()
@@ -19,8 +19,8 @@ mongoose.connect(config.database, (err) => {
     }
 })
 
-// posts
-router.get('/posts', (req, res) => Post.getAll(req, res))
-router.post('/posts', (req, res) => Post.add(req, res))
+// post routes
+router.get('/posts', (req, res) => Posts.getAll(req, res))
+router.post('/posts', (req, res) => Posts.add(req, res))
 
 module.exports = router
